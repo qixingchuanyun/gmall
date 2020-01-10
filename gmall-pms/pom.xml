@@ -12,7 +12,7 @@
     <artifactId>gmall-pms</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>gmall-pms</name>
-    <description>商品管理</description>
+    <description>Demo project for Spring Boot</description>
 
     <properties>
         <java.version>1.8</java.version>
@@ -41,21 +41,27 @@
             <artifactId>gmall-core</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
-        <dependency>
+
+
+<!--        <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-redis</artifactId>
-        </dependency>
-        <dependency>
+        </dependency>-->
+       <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-security</artifactId>
         </dependency>
 
-        <dependency>
+<!--        <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-openfeign</artifactId>
+        </dependency>-->
+
+        <dependency>
+            <groupId>com.aliyun.oss</groupId>
+            <artifactId>aliyun-sdk-oss</artifactId>
+            <version>3.5.0</version>
         </dependency>
-
-
     </dependencies>
     <!-- SpringCloud的依赖 -->
     <dependencyManagement>
