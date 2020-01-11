@@ -1,5 +1,6 @@
 package com.atguigu.gmall.pms.service.impl;
 
+import org.apache.commons.lang.StringUtils;
 import org.springframework.stereotype.Service;
 import java.util.Map;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
@@ -25,6 +26,26 @@ public class SpuInfoServiceImpl extends ServiceImpl<SpuInfoDao, SpuInfoEntity> i
         );
 
         return new PageVo(page);
+    }
+
+    @Override
+    public PageVo querySpuInfo(QueryCondition condition, Long catId) {
+        // 封装分页条件
+        IPage<SpuInfoEntity> page = new Query<SpuInfoEntity>().getPage(condition);
+
+        // 封装查询条件
+        QueryWrapper<SpuInfoEntity> wrapper = new QueryWrapper<>();
+        // 如果分类id不为0，要根据分类id查，否则查全部
+        if (catId != 0){
+            wrapper.eq("catalog_id", catId);
+        }
+        // 如果用户输入了检索条件，根据检索条件查
+        String key = condition.getKey();
+        if (StringUtils.isNotBlank(key)){
+            wrapper.and(t -> t.like("spu_name", key).or().like("id", key));
+        }
+
+        return new PageVo(this.page(page, wrapper));
     }
 
 }
