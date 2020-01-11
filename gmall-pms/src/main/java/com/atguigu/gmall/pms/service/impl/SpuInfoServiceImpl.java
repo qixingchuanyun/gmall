@@ -1,5 +1,6 @@
 package com.atguigu.gmall.pms.service.impl;
 
+import com.atguigu.gmall.pms.vo.SpuInfoVO;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.stereotype.Service;
 import java.util.Map;
@@ -46,6 +47,11 @@ public class SpuInfoServiceImpl extends ServiceImpl<SpuInfoDao, SpuInfoEntity> i
         }
 
         return new PageVo(this.page(page, wrapper));
+    }
+
+    @Override
+    public void saveSpuInfoVO(SpuInfoVO spuInfoVO) {
+
     }
 
 }
