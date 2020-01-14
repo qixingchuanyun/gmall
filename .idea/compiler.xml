@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="gamll-gateway" />
+        <module name="gamll-sms-interface" />
         <module name="gmall-admin" />
         <module name="gmall-core" />
         <module name="gmall-generator" />
@@ -19,6 +20,7 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="gamll-gateway" target="1.8" />
+      <module name="gamll-sms-interface" target="1.8" />
       <module name="gmall" target="1.8" />
       <module name="gmall-admin" target="1.8" />
       <module name="gmall-core" target="1.8" />

@@ -12,6 +12,7 @@
     <modules>
         <module>gmall-core</module>
         <module>gmall-admin</module>
+        <module>gamll-sms-interface</module>
     </modules>
 
 </project>
